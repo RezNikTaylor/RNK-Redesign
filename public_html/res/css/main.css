@@ -1,0 +1,162 @@
+/* style.CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+html,
+body {
+  display: table;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  background: #eee;
+  color: #000;
+  font-family: "Roboto", sans-serif; }
+
+hr {
+  margin: 20px 0 40px;
+  border: 0;
+  border-bottom: 2px solid #ededed; }
+
+header {
+  background: #0e232e;
+  height: 45px; }
+  header .container {
+    padding: 0; }
+  header #brand {
+    float: left; }
+    header #brand img {
+      float: left;
+      margin: -2px 0 0;
+      padding: 10px; }
+    header #brand h1 {
+      float: left;
+      margin: 1px 0 0 -6px;
+      padding: 10px 0;
+      font-size: 22px;
+      color: #fff; }
+  header nav {
+    float: right; }
+    header nav #nav #account {
+      float: left;
+      margin: 0 15px 0 0;
+      height: 45px;
+      font-weight: bold;
+      background: #0e232e;
+      color: #9Ca9ae; }
+      header nav #nav #account a:link, header nav #nav #account a:visited {
+        display: inline-block;
+        padding: 10px 0 0;
+        height: 45px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: normal; }
+    header nav #nav #main-nav {
+      float: right; }
+      header nav #nav #main-nav ul {
+        padding: 0; }
+      header nav #nav #main-nav li {
+        float: left;
+        background: #0e232e;
+        list-style: none;
+        font-size: 18px; }
+        header nav #nav #main-nav li a:link, header nav #nav #main-nav li a:visited {
+          display: inline-block;
+          padding: 10px 25px;
+          height: 45px;
+          color: #9Ca9ae; }
+        header nav #nav #main-nav li a.selected {
+          color: #fff;
+          background: #364e59;
+          text-shadow: 1px 2px 0 #000;
+          border-bottom: 3px solid #9ade00; }
+        header nav #nav #main-nav li a:hover, header nav #nav #main-nav li a:active {
+          text-decoration: none;
+          color: #fff;
+          background: #364e59;
+          text-shadow: 1px 2px 0 #000; }
+    header nav #mobile-menu {
+      padding: 0 0 0 2px;
+      width: 45px;
+      height: 45px;
+      font-size: 38px;
+      text-decoration: none;
+      color: #364e59; }
+
+#banner {
+  margin: 15px 0 0; }
+  #banner h2 {
+    margin: 0;
+    padding: 7px 0 0;
+    font-size: 40px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #75507b; }
+  #banner img {
+    border: 2px solid #fff; }
+
+#main {
+  margin: 15px 0 50px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1); }
+  #main h2 {
+    margin: 0;
+    font-size: 40px;
+    color: #5d5f5b; }
+  #main h3 {
+    margin: 0 0 15px;
+    font-size: 28px;
+    color: #9eabb0; }
+  #main p {
+    margin: 0 0 20px; }
+  #main a:link, #main a:visited {
+    font-weight: bold;
+    color: #73d216; }
+  #main h3.panel-title {
+    color: #fff; }
+
+footer {
+  display: table-row;
+  width: 100%;
+  height: 1px;
+  background: #202428; }
+  footer h2 {
+    margin: 15px 0 10px;
+    font-size: 22px;
+    color: #9eabb0; }
+  footer ul, footer p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    color: #75507b; }
+  footer a:link, footer a:visited {
+    color: #75507b;
+    font-weight: bold; }
+  footer #social-footer img {
+    padding: 0 1px 0 0;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    /* For IE8 and earlier */ }
+  footer #social-footer img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    /* For IE8 and earlier */ }
+  footer #copyright {
+    margin: 10px 0 0;
+    padding: 2px 5px;
+    width: 100%;
+    font-size: 18px;
+    background: #202428;
+    color: #364e59; }
+    footer #copyright a:link, footer #copyright a:visited {
+      color: #364e59;
+      font-weight: bold; }
+
+.message-color {
+  color: #73d216; }
+
+.error-color {
+  color: #b50000; }
+
+/*# sourceMappingURL=main.css.map */

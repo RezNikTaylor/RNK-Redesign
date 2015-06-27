@@ -1,0 +1,5 @@
+/.project
+/.idea/
+
+/app/config.php
+/public_html/sandbox/
