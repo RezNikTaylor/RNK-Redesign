@@ -86,10 +86,41 @@ function logAction($action, $message = "")
 	}
 }
 
-function datetimeToText($datetime = "")
+function ordinal($number)
+{
+	$ends = ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'];
+
+	if ((($number % 100) >= 11) && (($number % 100) <= 13)) {
+		return "{$number}th";
+	}
+
+	return ($number) ? $number . $ends[$number % 10] : $number;
+}
+
+function stripZerosFromDate($marked_string = "")
+{
+	// first remove the marked zeros
+	$no_zeros = str_replace('*0', '', $marked_string);
+	// then remove and remaining marks
+	$cleaned_string = str_replace('*', '', $no_zeros);
+	return $cleaned_string;
+}
+
+function datetimeToText($datetime = "", $includeTime = false)
 {
 	$unixdatetime = strtotime($datetime);
-	return strftime("%B %d, %Y at %I:%M %p", $unixdatetime);
+	$day = ordinal(strftime("%d", $unixdatetime));
+
+	if (!$includeTime) {
+		return stripZerosFromDate(strftime("%B *{$day}, %Y", $unixdatetime));
+	}
+
+	return stripZerosFromDate(strftime("%B *{$day}, %Y at *%I:%M %p", $unixdatetime));
+}
+
+function getDateElements($strftime, $datetime)
+{
+	return strftime($strftime, strtotime($datetime));
 }
 
 spl_autoload_register(function ($class) {
@@ -125,4 +156,9 @@ function getAlerts()
 	if (validString($error)) {
 		echo "<p><span class='glyphicon glyphicon-remove-circle error-color' aria-hidden='true'></span> " . $error . "</p>";
 	}
+}
+
+function snakeString($string)
+{
+	return str_replace(' ', '-', trim(strtolower($string)));
 }

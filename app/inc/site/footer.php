@@ -1,7 +1,8 @@
 <?php
 $root = $GLOBALS['root'];
-
 $footLines = getGlobal('footLines');
+
+$posts = Blog::findAll("ORDER BY datetime DESC LIMIT 5");
 ?>
 	</section>
 </div>
@@ -12,10 +13,20 @@ $footLines = getGlobal('footLines');
 			<div class='col-sm-4 col-xs-12'>
 				<h2>Recent Articles</h2>
 				<ul>
-					<li><a href='<?php echo $root . DS; ?>blog'>Website Launch</a></li>
-					<li><a href='<?php echo $root . DS; ?>blog'>Great Books To Pickup</a></li>
-					<li><a href='<?php echo $root . DS; ?>blog'>Dual Monitoring</a></li>
-					<li><a href='<?php echo $root . DS; ?>blog'>Sidechain Compression</a></li>
+					<?php if (count($posts)) {
+						foreach ($posts as $post) {
+							$title = $post->title;
+							$year = getDateElements("%Y", $post->datetime);
+							$link = $root . DS . 'blog' . DS . $year . DS . snakeString($title); ?>
+							<li><a href='<?php echo $link . DS; ?>'><?php echo $title ?></a></li>
+						<?php }
+					} else {
+						echo "Currently no blog posts! :(";
+					} ?>
+<!--					<li><a href='--><?php //echo $root . DS; ?><!--blog'>Website Launch</a></li>-->
+<!--					<li><a href='--><?php //echo $root . DS; ?><!--blog'>Great Books To Pickup</a></li>-->
+<!--					<li><a href='--><?php //echo $root . DS; ?><!--blog'>Dual Monitoring</a></li>-->
+<!--					<li><a href='--><?php //echo $root . DS; ?><!--blog'>Sidechain Compression</a></li>-->
 				</ul>
 			</div>
 
@@ -34,7 +45,7 @@ $footLines = getGlobal('footLines');
 				<p>
 					Seth Aaron Taylor<br>
 					Woodstock, VT<br>
-					seth@reznik-taylor.com
+					<a href='mailto:seth@reznik-taylor.com'>seth@reznik-taylor.com</a>
 				</p>
 			</div>
 		</div>

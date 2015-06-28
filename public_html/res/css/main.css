@@ -9,7 +9,7 @@ body {
   height: 100%;
   font-size: 18px;
   background: #eee;
-  color: #000;
+  color: #333;
   font-family: "Roboto", sans-serif; }
 
 hr {
@@ -98,7 +98,8 @@ header {
   margin: 15px 0 50px;
   padding: 20px;
   background: #fff;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1); }
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.75em; }
   #main h2 {
     margin: 0;
     font-size: 40px;
@@ -111,7 +112,7 @@ header {
     margin: 0 0 20px; }
   #main a:link, #main a:visited {
     font-weight: bold;
-    color: #73d216; }
+    color: #75bd00; }
   #main h3.panel-title {
     color: #fff; }
 

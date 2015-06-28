@@ -9,7 +9,7 @@ body {
 	height: 100%;
 	font-size: 18px;
 	background: #eee;
-	color: #000;
+	color: #333;
 	font-family: "Roboto", sans-serif;
 }
 hr {
@@ -126,6 +126,7 @@ header {
 	padding: 20px;
 	background: #fff;
 	box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+	line-height: 1.75em;
 	h2 {
 		margin: 0;
 		font-size: 40px;
@@ -139,7 +140,7 @@ header {
 	p { margin: 0 0 20px;	}
 	a:link, a:visited {
 		font-weight: bold;
-		color: #73d216;
+		color: #75bd00;
 	}
 	h3.panel-title { color: #fff; }
 }

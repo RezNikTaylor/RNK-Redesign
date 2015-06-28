@@ -4,7 +4,7 @@ defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
 
 // Core directories
 defined("HOME") ? null :
-	define("HOME", DS . 'var' . DS . 'www' . DS . 'html' . DS . 'redesign');
+	define("HOME", DS . 'var' . DS . 'www' . DS . 'html' . DS . 'RNK-Redesign');
 
 defined("APP") ? null :
 	define("APP", HOME . DS . 'app');
