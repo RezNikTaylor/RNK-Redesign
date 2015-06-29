@@ -6,16 +6,12 @@ $pageTitle = $post->title;
 $navSelect = 'blog';
 
 $year = $year = getDateElements("%Y", $post->datetime);
-
-
 $article = str_replace(['\r', '\n', '\r\n'], "", $post->article);
 ?>
 
 <?php includeFile('site/header.php'); ?>
 
-	<a href='../../'>Blog</a> >
-	<a href='../'><?php echo $year; ?></a> >
-	<?php echo $post->title; ?><br>
+	<a href='../../'>Blog</a> > <a href='../'><?php echo $year; ?></a> > <?php echo $post->title; ?><br>
 	<br>
 
 	<article>
