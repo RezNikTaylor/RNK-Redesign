@@ -57,13 +57,19 @@ class User extends DatabaseObject
 
 		$username = $db->real_escape_string($username);
 		$password = $db->real_escape_string($password);
-		$sql = "SELECT * FROM " . self::$tableName . " ";
-		$sql .= "WHERE username='{$username}' ";
-		$sql .= "AND password='{$password}' ";
-		$sql .= "LIMIT 1";
-		$result = self::findBySQL($sql);
 
-		return !empty($result) ? array_shift($result) : false;
+		if (static::fieldValueExists('username', $username)) {
+			$sql = "SELECT * FROM " . self::$tableName . " ";
+			$sql .= "WHERE username='{$username}' ";
+			$sql .= "LIMIT 1";
+			$result = self::findBySQL($sql);
+
+			if (!empty($result) && password_verify($password, $result[0]->password)) {
+				return array_shift($result);
+			}
+		}
+
+		return false;
 	}
 
 	public static function register($username, $password, $firstName, $lastName, $email)
@@ -71,7 +77,7 @@ class User extends DatabaseObject
 		global $db;
 
 		$username = $db->real_escape_string($username);
-		$password = $db->real_escape_string($password);
+		$password = password_hash($db->real_escape_string($password), PASSWORD_BCRYPT, ['cost' => 12]);
 		$firstName = $db->real_escape_string($firstName);
 		$lastName = $db->real_escape_string($lastName);
 		$email = $db->real_escape_string($email);
